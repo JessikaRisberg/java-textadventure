@@ -17,4 +17,10 @@ public class Room {
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
 
+    @Override
+    public String toString(){
+        String room =  getName() + "\n";
+        room = room + getDescription() + "\n";
+        return room;
+    }
 }
