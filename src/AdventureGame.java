@@ -39,4 +39,55 @@ public class AdventureGame {
         return commandparts;
     }
 
+    private void updatePlayerPosition(String direction) {
+        // check direction according to player input
+        if (direction.equalsIgnoreCase("north")) {
+            row--;
+            if (row < 0) {
+                row = 0;
+            }
+        } else if (direction.equalsIgnoreCase("south")) {
+            row++;
+
+        } else if (direction.equalsIgnoreCase("east")) {
+            col++;
+            if (col >= map[row].length) {
+                col--;
+            }
+        } else if (direction.equalsIgnoreCase("West")) {
+            col--;
+            if (col < 0) {
+                col = 0;
+            }
+        }
+    }
+
+    public void gameLoop() {
+        System.out.println("Welcome to The Escape");
+        System.out.println("This is an text adventure game");
+
+        boolean running = true;
+
+        while (running) {
+            System.out.println(map[row][col].toString());
+
+            // reading input from player from playerInput()
+            String[] commandParts = playerInput();
+            String command = commandParts[0];
+
+            if (command.equalsIgnoreCase("go")) {
+                updatePlayerPosition(commandParts[1]);
+
+                if (commandParts.length >= 2) {
+                    System.out.println("Going " + commandParts[1]);
+                } else {
+                    System.out.println("Direction is missing");
+                }
+            }
+            // tolka kommando
+            else if (command.equalsIgnoreCase("quit")) {
+                running = false;
+            }
+        }
+    }
 }
