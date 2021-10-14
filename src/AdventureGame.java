@@ -26,7 +26,7 @@ public class AdventureGame {
         };
 
         // start position
-        row = 1;
+        row = 0;
         col = 1;
     }
 
