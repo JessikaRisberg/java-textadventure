@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class AdventureGame {
@@ -109,8 +110,17 @@ public class AdventureGame {
         col = 0;
     }
 
+    private String playerName(){
+        System.out.println("Enter your name: ");
+
+        String playerName = input.nextLine();
+        Player player = new Player(playerName);
+        return String.valueOf(player);
+    }
+
     public void gameLoop() {
         System.out.println("Welcome to the Text Adventure Game (TAG)");
+        System.out.println("Hello " + playerName() + "get ready to play");
 
         boolean running = true;
 
@@ -181,6 +191,6 @@ public class AdventureGame {
     }
 
     public void quit() {
-        System.out.println("Thanks for playing TAG");
+        System.out.println("Thanks for playing Text adventure game");
     }
 }
