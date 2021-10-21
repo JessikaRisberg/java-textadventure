@@ -2,7 +2,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class AdventureGame {
@@ -102,6 +101,10 @@ public class AdventureGame {
         chest.addItemsToChest(sword);
         aHall.setItem(chest);
 
+        // Creating a character and placing in a room
+        Character todd = new Character("Todd", "To unlock the door find the lock code");
+        pinkRoom.setCharacter(todd);
+
         map = new Room[][] {
                 {pinkRoom, aHall},
                 {theEntrance, aDarkCave}};
@@ -112,6 +115,7 @@ public class AdventureGame {
 
     private String playerName(){
         System.out.println("Enter your name: ");
+        System.out.print("> ");
 
         String playerName = input.nextLine();
         Player player = new Player(playerName);

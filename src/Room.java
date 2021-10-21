@@ -6,6 +6,7 @@ public class Room {
     private String name;
     private String description;
     private Item item;
+    private Character character;
 
     public int numberOfDoors = 2;
 
@@ -34,6 +35,11 @@ public class Room {
         }
     }
 
+    // Return the information from the character
+    public Character getCharacterInformation() {
+        return character;
+    }
+
     public void setName(String newName) {
         name = newName;
     }
@@ -47,6 +53,8 @@ public class Room {
         item = inItem;
     }
 
+    public void setCharacter(Character inCharacter) { character = inCharacter; }
+
     // Create a string representation of a room to show in the main game loop.
     @Override
     public String toString() {
@@ -54,10 +62,16 @@ public class Room {
         roomString = roomString + getDescription() + "\n";              // roomstring: "A hall" + "this is a description of a hall.
         roomString = roomString + "Items\n---------------\n";             // roomstring: "A hall" + "this is a ..." + "Items..."
 
+
         // We need ot make sure that there is an item in the room before we try to call
         // a function in that item.
         if(item != null) {
             roomString = roomString + item.getType();
+        }
+
+        if(character != null) {
+            roomString = roomString + character.getName() + "\n";
+            roomString = roomString + character.getInformation();
         }
 
         return roomString;

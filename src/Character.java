@@ -9,14 +9,14 @@ public class Character {
     }
 
     public String getName() { return name; }
-    public void setName(String newName) { this.name = newName; }
 
     public String getInformation() { return information; }
-    public void setInformation(String newInformation) { this.information = newInformation; }
 
+    @Override
     public String toString(){
-        String characterName = getName() + "\n";
-        characterName = characterName + getInformation() + "\n";
+        String characterName = name;
+        characterName = getName() + "\n";
+        characterName = characterName + information + "\n";
 
         return characterName;
     }
