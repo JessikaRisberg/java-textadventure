@@ -16,13 +16,25 @@ class AdventureGameTest {
 
     @Test
     void initialization() {
-        Room pinkRoom = new Room("bedroom", "a small bedroom for you");
-        assertEquals(pinkRoom, pinkRoom.getDescription());
+        // set up
+        Room pinkRoom = new Room("Pink room", "This is a room with pink walls filled with pink furniture");
 
+        // Check result
+        assertSame(pinkRoom, pinkRoom);
     }
 
     @Test
-    void gameLoop() {
+    void runningGameLoop() {
+        boolean isRunnig = true;
+        //Check running gameloop
+        assertTrue(isRunnig);
+    }
+
+    @Test
+    void notRunningGameLoop() {
+        boolean isRunning = false;
+
+        assertFalse(isRunning);
     }
 
     @Test
