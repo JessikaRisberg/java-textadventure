@@ -6,7 +6,7 @@ class RoomTest {
 
     @Test
     void getName() {
-        Room bedroom = new Room("pinkroom", "a small bedroom for you");
+        Room bedroom = new Room("bedroom", "a small bedroom for you");
 
         assertEquals(bedroom, bedroom);
     }

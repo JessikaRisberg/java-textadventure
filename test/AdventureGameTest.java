@@ -21,6 +21,7 @@ class AdventureGameTest {
 
         // Check result
         assertSame(pinkRoom, pinkRoom);
+
     }
 
     @Test
@@ -39,8 +40,8 @@ class AdventureGameTest {
 
     @Test
     void quit() {
+        boolean isRunning = false;
 
-
-
+        assertFalse(isRunning);
     }
 }
