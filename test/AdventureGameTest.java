@@ -39,5 +39,8 @@ class AdventureGameTest {
 
     @Test
     void quit() {
+
+
+
     }
 }

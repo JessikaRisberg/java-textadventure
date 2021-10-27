@@ -123,7 +123,7 @@ public class AdventureGame {
     }
 
     public void gameLoop() {
-        System.out.println("Welcome to the Text Adventure Game (TAG)");
+        System.out.println("Welcome to the Text Adventure Game ");
         System.out.println("Hello " + playerName() + "get ready to play");
 
         boolean running = true;
@@ -166,6 +166,7 @@ public class AdventureGame {
                 LoadSaveGame();
             }
             else if(command.equalsIgnoreCase("quit")) {
+                quit();
                 running = false;
             }
         }
